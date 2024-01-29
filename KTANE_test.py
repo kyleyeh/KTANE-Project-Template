@@ -2,7 +2,7 @@
 from simpleWiresAction import *
 from buttonAction import *
 from simonSaysAction import *
-from complicatedWires import *
+from complicatedWiresAction import *
 from wireSequencesAction import *
 from passwordsAction import *
 
@@ -117,43 +117,43 @@ def test_button11():
 
 simonList = ["red", "blue", "green", "yellow", "yellow"]
 
-def test_simon_v0():
+def test_simonSays_v0():
     assert simonSaysAction(simonList, 0, True) == ["blue", "red", "yellow", "green", "green"]
 
-def test_simon_v1():
+def test_simonSays_v1():
     assert simonSaysAction(simonList, 1, True) == ["yellow", "green", "blue", "red", "red"]
 
-def test_simon_v2():
+def test_simonSays_v2():
     assert simonSaysAction(simonList, 2, True) == ["green", "red", "yellow", "blue", "blue"]
 
-def test_simon_nv0():
+def test_simonSays_nv0():
     assert simonSaysAction(simonList, 0, False) == ["blue", "yellow", "green", "red", "red"]
 
-def test_simon_nv1():
+def test_simonSays_nv1():
     assert simonSaysAction(simonList, 1, False) == ["red", "blue", "yellow", "green", "green"]
 
-def test_simonn_nv2():
+def test_simonSays_nv2():
     assert simonSaysAction(simonList, 2, False) == ["yellow", "green", "blue", "red", "red"]
 
 
 # Complicated Helper tests
 
-def test_complicated_serial_odd():
+def test_complicatedWires_serial_odd():
     assert serialCheck(1) == False
 
-def test_complicated_serial_even():
+def test_complicatedWires_serial_even():
     assert serialCheck(8) == True
 
-def test_complicated_parallel_true():
+def test_complicatedWires_parallel_true():
     assert parallelCheck(True) == True
 
-def test_complicated_parallel_false():
+def test_complicatedWires_parallel_false():
     assert parallelCheck(False) == False
 
-def test_complicated_batteries_true():
+def test_complicatedWires_batteries_true():
     assert batteryCheck(2) == True
 
-def test_complicated_batteries_true():
+def test_complicatedWires_batteries_true():
     assert batteryCheck(1) == False
 
 # Complicated tests
@@ -162,52 +162,52 @@ lastDigit = 6
 hasParallel = False
 numBatteries = 1
 
-def test_complicated_0000():
+def test_complicatedWires_0000():
     assert complicatedWiresAction("", lastDigit, hasParallel, numBatteries) == True
 
-def test_complicated_1000():
+def test_complicatedWires_1000():
     assert complicatedWiresAction("r", lastDigit, hasParallel, numBatteries) == serialCheck(lastDigit)
 
-def test_complicated_0100():
+def test_complicatedWires_0100():
     assert complicatedWiresAction("b", lastDigit, hasParallel, numBatteries) == serialCheck(lastDigit)
 
-def test_complicated_0010():
+def test_complicatedWires_0010():
     assert complicatedWiresAction("s", lastDigit, hasParallel, numBatteries) == True
 
-def test_complicated_0001():
+def test_complicatedWires_0001():
     assert complicatedWiresAction("l", lastDigit, hasParallel, numBatteries) == False
 
-def test_complicated_1100():
+def test_complicatedWires_1100():
     assert complicatedWiresAction("rb", lastDigit, hasParallel, numBatteries) == serialCheck(lastDigit)
 
-def test_complicated_1010():
+def test_complicatedWires_1010():
     assert complicatedWiresAction("rs", lastDigit, hasParallel, numBatteries) == True
 
-def test_complicated_1001():
+def test_complicatedWires_1001():
     assert complicatedWiresAction("rl", lastDigit, hasParallel, numBatteries) == batteryCheck(numBatteries)
 
-def test_complicated_0110():
+def test_complicatedWires_0110():
     assert complicatedWiresAction("bs", lastDigit, hasParallel, numBatteries) == False
 
-def test_complicated_0101():
+def test_complicatedWires_0101():
     assert complicatedWiresAction("bl", lastDigit, hasParallel, numBatteries) == parallelCheck(hasParallel)
 
-def test_complicated_0011():
+def test_complicatedWires_0011():
     assert complicatedWiresAction("sl", lastDigit, hasParallel, numBatteries) == batteryCheck(numBatteries)
 
-def test_complicated_1110():
+def test_complicatedWires_1110():
     assert complicatedWiresAction("rbs", lastDigit, hasParallel, numBatteries) == parallelCheck(hasParallel)
 
-def test_complicated_1101():
+def test_complicatedWires_1101():
     assert complicatedWiresAction("rbl", lastDigit, hasParallel, numBatteries) == serialCheck(lastDigit)
 
-def test_complicated_1011():
+def test_complicatedWires_1011():
     assert complicatedWiresAction("rsl", lastDigit, hasParallel, numBatteries) == batteryCheck(numBatteries)
 
-def test_complicated_0111():
+def test_complicatedWires_0111():
     assert complicatedWiresAction("bsl", lastDigit, hasParallel, numBatteries) == parallelCheck(hasParallel)
 
-def test_complicated_1111():
+def test_complicatedWires_1111():
     assert complicatedWiresAction("rbsl", lastDigit, hasParallel, numBatteries) == False
 
 
