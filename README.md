@@ -10,14 +10,18 @@ Each module that you write code for should have two key components:
 
 *Module Action Specifications*
 
+*Note that when colors are used, they are one of the following*
+    *red, blue, black, white, yellow, green*
+
 ----------------------------------------------------------------
 
 **Simple Wires (4 points)**
 '''
 simpleWiresAction
-    Given a list of wire colors and the last digit of the serial number, use selection statements and return a description of which wire to cut
+    Given a list of wire colors and the last digit of the serial number, use selection statements and return a description of which wire to cut.  Return one of the following descriptions:
+        "second", "last", "last blue", "last red", "first", "fourth", "third"
 
-    Arguments: wireList (list of wire colors), num (last digit of serial number)
+    Arguments: wireList (list of wire colors - see possibilities above), num (last digit of serial number)
     Return: description of which wire to cut
 '''
 
@@ -26,7 +30,7 @@ simpleWiresAction
 **Button (6 points)**
 '''
 heldButton
-    Given a color, return which digit is needed in the countdown timer (1, 4, or 5)
+    Given a color (see possibilities above), return which digit is needed in the countdown timer (1, 4, or 5)
 
     Arguments: color (what color the lit strip turned)
     Return: 1, 4, or 5
@@ -35,7 +39,7 @@ heldButton
 
 '''
 buttonAction
-    Given a button color, word, the number of batteries, and booleans indicating if there are lit CAR and/or FRK indicators, return either "press" or "hold"
+    Given a button color (see possibilities above), word, the number of batteries, and booleans indicating if there are lit CAR and/or FRK indicators, return either "press" or "hold"
 
     Arguments: color (button color), word (button word), numBatteries (number of batteries), car (if there is a lit CAR indicator (T/F)), frk (if there is a lit FRK indicator (T/F))
     Return: "press" or "hold"
@@ -46,10 +50,9 @@ buttonAction
 **Simon Says (8 points)**
 '''
 simonSaysAction
-    Given a list of flashing colors, the number of strikes, and whether or not the bomb's serial number has a vowel,
-    return a list containing the sequence of colors (in lowercase) that should be pressed 
+    Given a list of flashing colors, the number of strikes, and whether or not the bomb's serial number has a vowel, return a list containing the sequence of colors (in lowercase) that should be pressed 
 
-    Arguments: colors (the list of flashing colors), numStrikes (the current number of strikes), hasVowel (T/F indicating if the serial number contains a vowel)
+    Arguments: colors (the list of reds, greens, blues, and yellows), numStrikes (the current number of strikes), hasVowel (T/F indicating if the serial number contains a vowel)
     Return: a list containing the sequence of colors (in lowercase) that should be pressed
 '''
 
@@ -89,10 +92,10 @@ complicatedWiresAction
     and the number of batteries on the bomb, return whether you should cut the wire or not (T/F)
 
     Wire descriptions will consist of four attributes: red, blue, star, and light.
-    "rbsl" indicates that all of these attributes are present.
-    "rl" indicates that the wire has some red and is connected to a light.
-    "bsl" indicates that the wire has some blue and is connected to a star and a light.
-    "" indicates a wire that has none of these attributes.
+      "rbsl" indicates that all of these attributes are present.
+      "rl" indicates that the wire has some red and is connected to a light.
+      "bsl" indicates that the wire has some blue and is connected to a star and a light.
+      "" indicates a wire that has none of these attributes.
 
     Note that descriptions should always be in that order: red-blue-star-light.
 
@@ -121,8 +124,7 @@ wireSequencesAction
     Given the color of the current wire and a list containing the sequence of letters that wires of the current color
     have been connected to, return whether or not to cut the current wire
 
-    Arguments: color (the color of the current wire), currentColorList (a list containing the sequence of letters that wires of the current color
-    have been connected to)
+    Arguments: color (the color of the current wire, see list above), currentColorList (a list containing the sequence of letters that wires of the current color have been connected to)
     Return: T/F (indicating whether or not the user should cut the wire)
 '''
 
