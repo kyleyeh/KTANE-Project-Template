@@ -8,9 +8,9 @@ Each module that you write code for should have two key components:
 
 ----------------------------------------------------------------
 
-*Module Action Specifications*
+***Module Action Specifications***
 
-*Note that when colors are used, they are one of the following*
+*Note that when colors are used, they are one of the following:*
 
 *red, blue, black, white, yellow, green*
 
