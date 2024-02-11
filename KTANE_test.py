@@ -298,19 +298,19 @@ def test_wireSequences_a9a():
 # Passwords tests
 
 def test_passwords1():
-    assert passwordsAction(["K", "T", "Y", "U", "W", "M"], ["W", "O", "L", "Z", "I", "M"], ["M", "Q", "K", "L", "O", "U"], [], []) == "WOULD" 
+    assert passwordsAction(["K", "T", "Y", "U", "W", "M"], ["W", "O", "L", "Z", "I", "M"], ["M", "Q", "K", "L", "O", "U"], ["O", "Z", "L", "I", "R", "T"], ["D", "Z", "L", "I", "R", "T"]) == "WOULD" 
 
 def test_passwords2():
-    assert passwordsAction(["W", "U", "K", "J", "C", "G"], ["R", "U", "E", "P", "B", "C"], ["Z", "Y", "I", "L", "O", "W"], [], []) == "WRITE" 
+    assert passwordsAction(["W", "U", "K", "J", "C", "G"], ["R", "U", "E", "P", "B", "C"], ["Z", "Y", "I", "L", "O", "W"], ["O", "Z", "L", "I", "R", "T"], ["E", "Z", "L", "I", "R", "T"]) == "WRITE" 
 
 def test_passwords3():
-    assert passwordsAction(["Z", "M", "S", "N", "L", "Q"], ["N", "Z", "V", "E", "O", "Q"], ["Q", "V", "E", "P", "Z", "I"], [], []) == "NEVER"
+    assert passwordsAction(["Z", "M", "S", "N", "L", "Q"], ["N", "Z", "V", "E", "O", "Q"], ["Q", "V", "E", "P", "Z", "I"], ["O", "E", "L", "I", "R", "T"], ["O", "Z", "L", "I", "R", "T"]) == "NEVER"
 
 def test_passwords4():
-    assert passwordsAction(["Y", "V", "F", "O", "A", "I"], ["K", "U", "G", "I", "R", "C"], ["A", "M", "O", "Q", "J", "F"], [], []) == "AGAIN"
+    assert passwordsAction(["Y", "V", "F", "O", "A", "I"], ["K", "U", "G", "I", "R", "C"], ["A", "M", "O", "Q", "J", "F"], ["O", "Z", "L", "I", "R", "T"], ["N", "Z", "L", "I", "R", "T"]) == "AGAIN"
 
 def test_passwords5():
-    assert passwordsAction(["R", "C", "H", "G", "T", "D"], ["T", "D", "J", "O", "P", "R"], ["M", "O", "P", "U", "W", "D"], ["J", "S", "N", "I", "M", "T"], []) == "HOUSE"
+    assert passwordsAction(["R", "C", "H", "G", "T", "D"], ["T", "D", "J", "O", "P", "R"], ["M", "O", "P", "U", "W", "D"], ["J", "S", "N", "I", "M", "T"], ["E", "Z", "L", "I", "R", "T"]) == "HOUSE"
 
 def test_passwords6():
-    assert passwordsAction(["X", "Y", "S", "A", "M", "Q"], ["L", "A", "U", "T", "R", "Q"], ["J", "C", "S", "I", "N", "O"], [], []) == "STILL"
+    assert passwordsAction(["X", "Y", "S", "A", "M", "Q"], ["L", "A", "U", "T", "R", "Q"], ["J", "C", "S", "I", "N", "O"], ["O", "Z", "L", "I", "R", "T"], ["O", "Z", "L", "I", "R", "T"]) == "STILL"
